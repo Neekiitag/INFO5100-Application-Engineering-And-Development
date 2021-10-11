@@ -5,6 +5,7 @@
 package ui;
 
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -343,6 +344,21 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
+        
+        try{
+            ArrayList<Integer> unqname = new ArrayList<>();
+            for( CarInfo carInfo : history.getHistory()){
+                if(!(unqname.contains(carInfo.getSerialNumber()))){
+                    unqname.add(carInfo.getSerialNumber());
+                }
+            }
+            
+            if(unqname.contains(Integer.parseInt(txtSerialNo.getText()))) {
+                JOptionPane.showMessageDialog(this, "Enter unique serial number ");
+            }
+        } catch(Exception e){
+            System.out.println("Error in serial no check " +e);
+        }
         
         String carManufacturer = jCombocarManufacturer.getSelectedItem().toString();
         String carModelname = txtCarModelName.getText();

@@ -503,6 +503,19 @@ public class ViewJPanel extends javax.swing.JPanel {
             btnCheckActive.setSelected(false);
         }
         
+        btnUpdateSave.setEnabled(false);
+        jCombocarManufacturer.setEnabled(false);
+        txtCarModelName.setEditable(false);
+        txtCarModelNumber.setEditable(false);
+        jComboBoxYearOfManufacturing.setEnabled(false);
+        txtSerialNo.setEditable(false);
+        jComboLocation.setEnabled(false);
+        jComboNoOfSeats.setEnabled(false);
+        btnCheckActive.setEnabled(false);
+        btnRadioYes.setEnabled(false);
+        btnRadioNo.setEnabled(false);
+
+
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -720,8 +733,8 @@ public class ViewJPanel extends javax.swing.JPanel {
        jComboLocation.setSelectedItem(selectedCarDetails.getCity());
        jComboNoOfSeats.setSelectedItem(String.valueOf(selectedCarDetails.getCountOfSeats()));
        if(selectedCarDetails.getAvailability() == "Yes" ){
-           btnRadioYes.setSelected(false);
-          // noChecked.setSelected(false);
+           btnRadioYes.setSelected(true);
+           btnRadioNo.setSelected(false);
        }else {
            btnRadioNo.setSelected(true);
            btnRadioYes.setSelected(false);
