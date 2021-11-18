@@ -11,7 +11,7 @@ package Business.Employee;
 public class Employee {
     
     private String name;
-    private int id;
+    private final int id;
     private static int count = 1;
 
     public Employee() {
@@ -31,6 +31,7 @@ public class Employee {
     public String getName() {
         return name;
     }
+
 
     @Override
     public String toString() {

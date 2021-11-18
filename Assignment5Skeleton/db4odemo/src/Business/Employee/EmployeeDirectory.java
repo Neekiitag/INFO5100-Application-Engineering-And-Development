@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class EmployeeDirectory {
     
-    private ArrayList<Employee> employeeList;
+    private final ArrayList<Employee> employeeList;
 
     public EmployeeDirectory() {
         employeeList = new ArrayList();
