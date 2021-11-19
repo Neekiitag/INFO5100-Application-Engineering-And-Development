@@ -7,10 +7,9 @@ package Business.Restaurant;
 
 /**
  *
- * @author harold
+ * @author Charmi Dalal
  */
 public class Restaurant {
-    
     private String restaurantNo;
     private String restaurantName;
     private String mobileNo;
@@ -74,8 +73,5 @@ public class Restaurant {
     public void setEmail(String Email) {
         this.Email = Email;
     }
-    
-    
-    
     
 }

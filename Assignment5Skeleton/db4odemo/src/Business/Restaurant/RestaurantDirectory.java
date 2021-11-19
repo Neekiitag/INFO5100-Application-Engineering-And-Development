@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author harold
+ * @author Charmi Dalal
  */
 public class RestaurantDirectory {
     private ArrayList<Restaurant> restaurantDirectory;
@@ -82,5 +82,3 @@ public class RestaurantDirectory {
         return true;
     }
 }
-    
-

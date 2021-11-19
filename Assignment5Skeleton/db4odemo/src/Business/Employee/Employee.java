@@ -6,7 +6,7 @@ package Business.Employee;
 
 /**
  *
- * @author raunak
+ * @author Charmi Dalal
  */
 public class Employee {
     
@@ -31,7 +31,6 @@ public class Employee {
     public String getName() {
         return name;
     }
-
 
     @Override
     public String toString() {

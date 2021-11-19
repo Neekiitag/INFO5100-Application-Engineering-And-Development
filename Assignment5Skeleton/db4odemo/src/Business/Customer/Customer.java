@@ -7,22 +7,23 @@ package Business.Customer;
 
 /**
  *
- * @author harold
+ * @author Charmi Dalal
  */
 public class Customer {
-    private String customerNumber;
-    private String customerName;
-    private String customerPhoneNumber;
-    private String customerStreetName;
-    private String customerZipcode;
-    private String customerEmailId;
 
-    public String getCustomerNumber() {
-        return customerNumber;
+    private String customerNo;
+    private String customerName;
+    private String customerPhone;
+    private String customerStreet;
+    private String customerZipcode;
+    private String customerEmail;
+
+    public String getCustomerNo() {
+        return customerNo;
     }
 
-    public void setCustomerNumber(String customerNumber) {
-        this.customerNumber = customerNumber;
+    public void setCustomerNo(String customerNo) {
+        this.customerNo = customerNo;
     }
 
     public String getCustomerName() {
@@ -33,20 +34,20 @@ public class Customer {
         this.customerName = customerName;
     }
 
-    public String getCustomerPhoneNumber() {
-        return customerPhoneNumber;
+    public String getCustomerPhone() {
+        return customerPhone;
     }
 
-    public void setCustomerPhoneNumber(String customerPhoneNumber) {
-        this.customerPhoneNumber = customerPhoneNumber;
+    public void setCustomerPhone(String customerPhone) {
+        this.customerPhone = customerPhone;
     }
 
-    public String getCustomerStreetName() {
-        return customerStreetName;
+    public String getCustomerStreet() {
+        return customerStreet;
     }
 
-    public void setCustomerStreetName(String customerStreetName) {
-        this.customerStreetName = customerStreetName;
+    public void setCustomerStreet(String customerStreet) {
+        this.customerStreet = customerStreet;
     }
 
     public String getCustomerZipcode() {
@@ -57,14 +58,12 @@ public class Customer {
         this.customerZipcode = customerZipcode;
     }
 
-    public String getCustomerEmailId() {
-        return customerEmailId;
+    public String getCustomerEmail() {
+        return customerEmail;
     }
 
-    public void setCustomerEmailId(String customerEmailId) {
-        this.customerEmailId = customerEmailId;
+    public void setCustomerEmail(String customerEmail) {
+        this.customerEmail = customerEmail;
     }
-    
-    
     
 }

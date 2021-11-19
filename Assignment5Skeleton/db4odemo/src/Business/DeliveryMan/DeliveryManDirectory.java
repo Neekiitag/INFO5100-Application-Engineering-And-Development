@@ -10,10 +10,10 @@ import java.util.ArrayList;
 
 /**
  *
- * @author harold
+ * @author  Charmi Dalal
+
  */
 public class DeliveryManDirectory {
-    
     private ArrayList<DeliveryMan> deliveryManDirectory;
 
     public DeliveryManDirectory(){
@@ -23,8 +23,7 @@ public class DeliveryManDirectory {
     public ArrayList<DeliveryMan> getDeliveryManDirectory() {
         return deliveryManDirectory;
     }
-    
-    
+
     public void setDeliveryManDirectory(ArrayList<DeliveryMan> deliveryManDirectory) {
         this.deliveryManDirectory = deliveryManDirectory;
     }
@@ -67,7 +66,6 @@ public class DeliveryManDirectory {
         return true;
     }
     
-    
     public void updateDeliveryMan(String id,String name,String phone,String email){
         for(DeliveryMan deliveryMan: deliveryManDirectory){
             if(deliveryMan.getDeliveryId().equalsIgnoreCase(id)){
@@ -86,7 +84,4 @@ public class DeliveryManDirectory {
         }
         return null;
     }
-    
-    
-    
 }

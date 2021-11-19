@@ -7,15 +7,15 @@ package Business.DeliveryMan;
 
 /**
  *
- * @author harold
+ * @author Charmi Dalal
+
  */
 public class DeliveryMan {
-    
     private String deliveryId;
     private String name;
     private String phoneNo;
     private String email;
-
+    
     public String getDeliveryId() {
         return deliveryId;
     }
@@ -47,7 +47,5 @@ public class DeliveryMan {
     public void setEmail(String email) {
         this.email = email;
     }
-    
-    
     
 }

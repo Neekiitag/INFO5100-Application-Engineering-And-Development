@@ -10,10 +10,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author harold
+ * @author Charmi Dalal
  */
 public class CustomerDirectory {
-    
     private ArrayList<Customer> customerDirectory;
     
     public CustomerDirectory(){
@@ -29,7 +28,7 @@ public class CustomerDirectory {
     }
     
     public void deleteCustomer(int index,EcoSystem system){
-        String id = customerDirectory.get(index).getCustomerNumber();
+        String id = customerDirectory.get(index).getCustomerNo();
         for(int i =0; i <system.getUserAccountDirectory().getUserAccountList().size();i++){
             if(system.getUserAccountDirectory().getUserAccountList().get(i).getEmployee().getName().equalsIgnoreCase(id)){
                 system.getUserAccountDirectory().getUserAccountList().remove(i);
@@ -48,29 +47,28 @@ public class CustomerDirectory {
     
     public void updateCustomer(String customerNo, String customerName, String customerPhone, String customerStreet,String customerZipcode,String customerEmail){
         for(Customer customer: customerDirectory){
-            if(customer.getCustomerNumber().equalsIgnoreCase(customerNo)){
+            if(customer.getCustomerNo().equalsIgnoreCase(customerNo)){
                 customer.setCustomerName(customerName);
-                customer.setCustomerPhoneNumber(customerPhone);
-                customer.setCustomerStreetName(customerStreet);
+                customer.setCustomerPhone(customerPhone);
+                customer.setCustomerStreet(customerStreet);
                 customer.setCustomerZipcode(customerZipcode);
-                customer.setCustomerEmailId(customerEmail);
+                customer.setCustomerEmail(customerEmail);
             }
         }
     }
     
     public boolean isPhoneUnique(String phone){
         for(Customer customer: customerDirectory){
-            if(customer.getCustomerPhoneNumber().equalsIgnoreCase(phone)){
+            if(customer.getCustomerPhone().equalsIgnoreCase(phone)){
                 return false;
             }
         }
         return true;
     }
     
-    
     public boolean isEmailUnique(String email){
         for(Customer customer: customerDirectory){
-            if(customer.getCustomerEmailId().equalsIgnoreCase(email)){
+            if(customer.getCustomerEmail().equalsIgnoreCase(email)){
                 return false;
             }
         }
@@ -79,7 +77,7 @@ public class CustomerDirectory {
     
     public Customer getCustomer(String id){
         for(Customer customer: customerDirectory){
-            if(customer.getCustomerNumber().equalsIgnoreCase(id)){
+            if(customer.getCustomerNo().equalsIgnoreCase(id)){
                 return customer;
             }
         }
@@ -89,6 +87,4 @@ public class CustomerDirectory {
     public String generateCustomerID(){
         return "Customer"+(customerDirectory.size()+1);
     }
-    
-    
 }

@@ -5,29 +5,28 @@
  */
 package Business;
 
-
 import Business.Customer.CustomerDirectory;
-import Business.DeliveryMan.DeliveryManDirectory;
 import Business.Menu.MenuDirectory;
+import Business.DeliveryMan.DeliveryManDirectory;
 import Business.Order.OrderDirectory;
+import java.util.ArrayList;
 import Business.Restaurant.RestaurantDirectory;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
-import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
  *
- * @author MyPC1
+ * @author Charmi Dalal
  */
-public class EcoSystem extends Organization{
-    
+public class EcoSystem extends Organization {
+
     private static EcoSystem business;
     private RestaurantDirectory restaurantDirectory;
     private CustomerDirectory customerDirectory;
-    private DeliveryManDirectory deliveryManDirectory;
     private MenuDirectory menuDirectory;
+    private DeliveryManDirectory deliveryManDirectory;
     private OrderDirectory orderDirectory;
 
     public EcoSystem(RestaurantDirectory restaurantDirectory, CustomerDirectory customerDirectory, DeliveryManDirectory deliveryManDirectory) {
@@ -36,7 +35,7 @@ public class EcoSystem extends Organization{
         this.customerDirectory = customerDirectory;
         this.deliveryManDirectory = deliveryManDirectory;
     }
-    
+
     public MenuDirectory getMenuDirectory() {
         return menuDirectory;
     }
@@ -85,8 +84,12 @@ public class EcoSystem extends Organization{
         this.orderDirectory = orderDirectory;
     }
 
-    
-    
+    public static EcoSystem getInstance() {
+        if (business == null) {
+            business = new EcoSystem();
+        }
+        return business;
+    }
     public Boolean checkValidPhoneFormat(String phoneNo)
     {
         String regex = "^\\(?([0-9]{3})\\)?[-.\\s]?([0-9]{3})[-.\\s]?([0-9]{4})$";
@@ -98,7 +101,6 @@ public class EcoSystem extends Organization{
         }
         return false;
     }
-    
     public Boolean checkValidEmailFormat(String email)
     {
         String regex = "^(.+)@(.+)$";
@@ -110,16 +112,6 @@ public class EcoSystem extends Organization{
         }
         return false;
     }
-    
-    
-    
-    public static EcoSystem getInstance(){
-        if(business==null){
-            business=new EcoSystem();
-        }
-        return business;
-    }
-    
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roleList = new ArrayList<Role>();
