@@ -114,7 +114,7 @@ public class RestaurantOrderJPanel extends javax.swing.JPanel {
 
         lblOrderList.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         lblOrderList.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOrderList.setText("Order List");
+        lblOrderList.setText("Order Information");
 
         tblOrderList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -164,17 +164,17 @@ public class RestaurantOrderJPanel extends javax.swing.JPanel {
 
         tblDeliveryMan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Delivery Man Name", "Contact No", "Address", "Delivery Man Id"
+                "Delivery Man Name", "Contact No", "Delivery Man Id"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -202,20 +202,20 @@ public class RestaurantOrderJPanel extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(463, 463, 463)
-                        .addComponent(btnAssignDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(465, 465, 465)
-                        .addComponent(brnConfirmOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(223, 223, 223)
-                        .addComponent(scrollDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblOrderList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(scrollOrderList, javax.swing.GroupLayout.DEFAULT_SIZE, 976, Short.MAX_VALUE))))
-                .addContainerGap(46, Short.MAX_VALUE))
+                            .addComponent(scrollOrderList, javax.swing.GroupLayout.DEFAULT_SIZE, 976, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(334, 334, 334)
+                        .addComponent(scrollDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(465, 465, 465)
+                        .addComponent(btnAssignDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(467, 467, 467)
+                        .addComponent(brnConfirmOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(206, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,13 +224,13 @@ public class RestaurantOrderJPanel extends javax.swing.JPanel {
                 .addComponent(lblOrderList)
                 .addGap(18, 18, 18)
                 .addComponent(scrollOrderList, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(11, 11, 11)
                 .addComponent(brnConfirmOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(scrollDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAssignDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -269,7 +269,7 @@ public class RestaurantOrderJPanel extends javax.swing.JPanel {
                     if (deliveryRow >= 0) {
                         System.out.println("In here"+ deliveryRow);
                     order.setDeliveryMan(deliveryManDirectory.getDeliveryManDirectory().get(deliveryRow));
-                    String empId = (String) tblDeliveryMan.getValueAt(deliveryRow,3);
+                    String empId = (String) tblDeliveryMan.getValueAt(deliveryRow,2);
                     UserAccount user = business.getUserAccountDirectory().getUserByEmployeeNo(empId);
                     order.setReceiver(user);
                     order.setStatus("Preparing Order");

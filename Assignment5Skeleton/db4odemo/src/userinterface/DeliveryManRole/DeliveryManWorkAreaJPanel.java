@@ -82,6 +82,8 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null}
             },
             new String [] {
@@ -105,8 +107,9 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 740, 100));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 740, 140));
 
+        processJButton.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
         processJButton.setText("OK");
         processJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         processJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -114,17 +117,18 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
                 processJButtonActionPerformed(evt);
             }
         });
-        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 60, 20));
+        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 320, 60, 30));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setText("Update Delivery Details");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, -1, 20));
 
-        jLabel2.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
         jLabel2.setText("Mark Delivery Complete:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 150, 20));
-        add(resultJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 180, 20));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 170, 20));
+        add(resultJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 490, 30));
 
+        jButton1.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
         jButton1.setText("Confirm Order Pickup");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +136,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 140, 30));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 140, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed

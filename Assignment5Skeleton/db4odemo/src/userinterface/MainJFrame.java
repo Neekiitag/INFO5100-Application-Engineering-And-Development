@@ -14,10 +14,12 @@ import Business.Order.OrderDirectory;
 import Business.Restaurant.RestaurantDirectory;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -103,7 +105,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        menuContainer.setBackground(new java.awt.Color(204, 255, 255));
+        menuContainer.setBackground(new java.awt.Color(0, 153, 204));
 
         btnLogin.setBackground(new java.awt.Color(204, 204, 204));
         btnLogin.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
@@ -115,16 +117,22 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        txtUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsernameActionPerformed(evt);
+            }
+        });
+
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPasswordActionPerformed(evt);
             }
         });
 
-        lblUsername.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        lblUsername.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
         lblUsername.setText("Username:");
 
-        lblPassword.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        lblPassword.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
         lblPassword.setText("Password:");
 
         btnLogout.setBackground(new java.awt.Color(255, 255, 255));
@@ -143,48 +151,45 @@ public class MainJFrame extends javax.swing.JFrame {
         menuContainerLayout.setHorizontalGroup(
             menuContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuContainerLayout.createSequentialGroup()
-                .addGroup(menuContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(menuContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(menuContainerLayout.createSequentialGroup()
-                        .addGap(124, 124, 124)
+                        .addGap(103, 103, 103)
+                        .addGroup(menuContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblUsername, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtPassword)
+                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(loginJLabel))
                     .addGroup(menuContainerLayout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(lblUsername)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(menuContainerLayout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(lblPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuContainerLayout.createSequentialGroup()
-                .addContainerGap(66, Short.MAX_VALUE)
-                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(91, 91, 91))
+                        .addGap(54, 54, 54)
+                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         menuContainerLayout.setVerticalGroup(
             menuContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuContainerLayout.createSequentialGroup()
-                .addGap(134, 134, 134)
-                .addComponent(loginJLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(menuContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(menuContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(menuContainerLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(lblUsername, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(18, 18, 18)
+                        .addGap(167, 167, 167)
+                        .addComponent(loginJLabel)
+                        .addGap(98, 98, 98))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuContainerLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
                 .addGroup(menuContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
-                .addGroup(menuContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(457, Short.MAX_VALUE))
+                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(447, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(menuContainer);
@@ -194,25 +199,26 @@ public class MainJFrame extends javax.swing.JFrame {
         cardLayoutMainWindow.setBackground(new java.awt.Color(204, 255, 255));
 
         GrubHublbl.setFont(new java.awt.Font("Gill Sans MT", 1, 18)); // NOI18N
+        GrubHublbl.setForeground(new java.awt.Color(0, 153, 204));
         GrubHublbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         GrubHublbl.setText("GrubHub");
-        GrubHublbl.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        GrubHublbl.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 204), 4, true));
 
         javax.swing.GroupLayout cardLayoutMainWindowLayout = new javax.swing.GroupLayout(cardLayoutMainWindow);
         cardLayoutMainWindow.setLayout(cardLayoutMainWindowLayout);
         cardLayoutMainWindowLayout.setHorizontalGroup(
             cardLayoutMainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cardLayoutMainWindowLayout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(GrubHublbl, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1080, Short.MAX_VALUE))
+                .addGap(196, 196, 196)
+                .addComponent(GrubHublbl, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(960, Short.MAX_VALUE))
         );
         cardLayoutMainWindowLayout.setVerticalGroup(
             cardLayoutMainWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cardLayoutMainWindowLayout.createSequentialGroup()
-                .addGap(205, 205, 205)
-                .addComponent(GrubHublbl, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(446, Short.MAX_VALUE))
+                .addGap(197, 197, 197)
+                .addComponent(GrubHublbl, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(441, Short.MAX_VALUE))
         );
 
         cardLayoutJPanel.add(cardLayoutMainWindow, "card2");
@@ -257,15 +263,26 @@ public class MainJFrame extends javax.swing.JFrame {
         txtPassword.setText("");
 
         cardLayoutJPanel.removeAll();
-
+        JPanel blankJP = new JPanel();
+        blankJP.setBackground(Color.black);
+        cardLayoutJPanel.add("blank", blankJP);
         CardLayout crdLyt = (CardLayout) cardLayoutJPanel.getLayout();
         crdLyt.next(cardLayoutJPanel);
-        dB4OUtil.storeSystem(system);
+        
+//        cardLayoutJPanel.removeAll();
+
+//        CardLayout crdLyt = (CardLayout) cardLayoutJPanel.getLayout();
+//        crdLyt.next(cardLayoutJPanel);
+//        dB4OUtil.storeSystem(system);
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPasswordActionPerformed
+
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsernameActionPerformed
 
     /**
      * @param args the command line arguments

@@ -54,34 +54,34 @@ public class RestaurantWorkAreaJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         userJButton.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
-        userJButton.setText("Restaurant Info");
+        userJButton.setText("Manage Restaurant Info");
         userJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         userJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userJButtonActionPerformed(evt);
             }
         });
-        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 309, 140, 40));
+        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 150, 40));
 
         manageEmployeeJButton.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
-        manageEmployeeJButton.setText("Menu");
+        manageEmployeeJButton.setText("View Menu Options");
         manageEmployeeJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         manageEmployeeJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageEmployeeJButtonActionPerformed(evt);
             }
         });
-        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 219, 140, 40));
+        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 150, 40));
 
         manageOrganizationJButton.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
-        manageOrganizationJButton.setText("Orders");
+        manageOrganizationJButton.setText("Check Order Details");
         manageOrganizationJButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         manageOrganizationJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageOrganizationJButtonActionPerformed(evt);
             }
         });
-        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 129, 140, 40));
+        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 140, 40));
 
         enterpriseLabel.setFont(new java.awt.Font("Gill Sans MT", 1, 18)); // NOI18N
         enterpriseLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
