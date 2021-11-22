@@ -7,7 +7,7 @@ package Business.Customer;
 
 /**
  *
- * @author Charmi Dalal
+ * @author harold
  */
 public class Customer {
 

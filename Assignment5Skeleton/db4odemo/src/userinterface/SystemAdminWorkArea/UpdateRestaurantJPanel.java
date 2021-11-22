@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Charmi Dalal
+ * @author adity
  */
 public class UpdateRestaurantJPanel extends javax.swing.JPanel {
 
@@ -215,7 +215,7 @@ public class UpdateRestaurantJPanel extends javax.swing.JPanel {
             if (selectedRow >= 0) {
                 CardLayout layout = (CardLayout) container.getLayout();
                 Restaurant restaurant = restaurantDirectory.getRestaurantNo(selectedRow);
-                ViewRestaurantsJPanel viewRestaurantsJPanel = new ViewRestaurantsJPanel(container, restaurant);
+                ViewRestaurantsJPanel viewRestaurantsJPanel = new ViewRestaurantsJPanel(container, restaurant, system);
                 container.add(viewRestaurantsJPanel);
                 layout.next(container);
             }

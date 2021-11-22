@@ -7,7 +7,7 @@ package Business.Restaurant;
 
 /**
  *
- * @author Charmi Dalal
+ * @author harold
  */
 public class Restaurant {
     private String restaurantNo;

@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Charmi Dalal
+ * @author adity
  */
 public class RestaurantMenuItemJPanel extends javax.swing.JPanel {
 

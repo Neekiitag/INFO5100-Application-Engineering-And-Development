@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Charmi Dalal
+ * @author adity
  */
 public class ViewDeliveryManJPanel extends javax.swing.JPanel {
 
@@ -63,7 +63,7 @@ public class ViewDeliveryManJPanel extends javax.swing.JPanel {
         lblEmail = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(204, 204, 204));
+        setBackground(new java.awt.Color(204, 255, 255));
 
         backBtn.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
         backBtn.setText("Back");
@@ -197,6 +197,7 @@ public class ViewDeliveryManJPanel extends javax.swing.JPanel {
             deliveryManDirectory.updateDeliveryMan(id, name, phone, email);
             JOptionPane.showMessageDialog(null, "Delivery man details updated!");
             setEditableFalse();
+            emptyAllFields();
         }
     }//GEN-LAST:event_saveBtnActionPerformed
 
@@ -211,6 +212,14 @@ public class ViewDeliveryManJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) container.getLayout();
         layout.previous(container);
     }//GEN-LAST:event_backBtnActionPerformed
+   
+    public void emptyAllFields() {
+        
+        txtFullName.setText("");
+        txtPhone.setText("");
+        txtEmail.setText("");
+    }
+    
     public void setEditableFalse() {
         txtDeliveryNo.setEditable(false);
         txtFullName.setEditable(false);

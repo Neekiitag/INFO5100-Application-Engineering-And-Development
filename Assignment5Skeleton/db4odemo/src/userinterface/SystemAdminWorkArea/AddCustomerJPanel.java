@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Charmi Dalal
+ * @author adity
  */
 public class AddCustomerJPanel extends javax.swing.JPanel {
 
@@ -201,7 +201,7 @@ public class AddCustomerJPanel extends javax.swing.JPanel {
                     .addComponent(lblStreetAddress)
                     .addComponent(txtStreetAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblZipcode)
                     .addComponent(txtZipcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -236,6 +236,8 @@ public class AddCustomerJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please Enter Correct Phone Format.");
         } else if (!system.checkValidEmailFormat(email)) {
             JOptionPane.showMessageDialog(null, "Email format incorrect!");
+        } else if (!system.checkValidNameFormat(name)) {
+            JOptionPane.showMessageDialog(null, "Name format incorrect!");
         } else if (!customerDirectory.isEmailUnique(email)) {
             JOptionPane.showMessageDialog(null, "Sorry! User with this email already exist!");
         } else if (!customerDirectory.isPhoneUnique(phone)) {

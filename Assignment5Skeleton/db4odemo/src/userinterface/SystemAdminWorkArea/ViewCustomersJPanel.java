@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Charmi Dalal
+ * @author adity
  */
 public class ViewCustomersJPanel extends javax.swing.JPanel {
 
@@ -217,16 +217,20 @@ public class ViewCustomersJPanel extends javax.swing.JPanel {
         String email = txtEmail.getText();
         
         if (name.isEmpty() || phone.isEmpty() || street.isEmpty() | zipcode.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Please enter all fields!");
+            JOptionPane.showMessageDialog(null, "Please enter all fields.");
         } else if (!system.checkValidPhoneFormat(phone)) {
-            JOptionPane.showMessageDialog(null, "Phone format incorrect!");
+            JOptionPane.showMessageDialog(null, "Enter correct Phone format.");
         } else if (!system.checkValidEmailFormat(email)) {
-            JOptionPane.showMessageDialog(null, "Email format incorrect!");
-        }  else {
-            customerDirectory.updateCustomer(id, name, phone, street, zipcode,email);
-            JOptionPane.showMessageDialog(null, "Customer details updated!");
+            JOptionPane.showMessageDialog(null, "Enter correct Email format.");
+        } else if (!system.checkValidNameFormat(name)) {
+            JOptionPane.showMessageDialog(null, "Enter correct Name format.");
+        } else {
+            customerDirectory.updateCustomer(id, name, phone, street, zipcode, email);
+            JOptionPane.showMessageDialog(null, "Successfully updated Customer details.");
             setEdititableFalse();
+            emptyAllFields();
         }
+         
     }//GEN-LAST:event_btnSaveChangesActionPerformed
     public void setEdititableFalse(){
         txtCustomerNo.setEditable(false);
@@ -235,6 +239,14 @@ public class ViewCustomersJPanel extends javax.swing.JPanel {
         txtMobileNo.setEditable(false);
         txtStreetAddress.setEditable(false);
         txtZipcode.setEditable(false);
+    }
+    public void emptyAllFields() {
+        txtCustomerNo.setText("");
+        txtFullName.setText("");
+        txtMobileNo.setText("");
+        txtStreetAddress.setText("");
+        txtZipcode.setText("");
+        txtEmail.setText("");
     }
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:

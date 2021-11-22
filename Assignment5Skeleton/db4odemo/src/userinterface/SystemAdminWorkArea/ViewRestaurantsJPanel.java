@@ -5,6 +5,7 @@
  */
 package userinterface.SystemAdminWorkArea;
 
+import Business.EcoSystem;
 import Business.Restaurant.Restaurant;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -15,7 +16,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Charmi Dalal
+ * @author adity
  */
 public class ViewRestaurantsJPanel extends javax.swing.JPanel {
 
@@ -24,11 +25,13 @@ public class ViewRestaurantsJPanel extends javax.swing.JPanel {
      */
     private final JPanel container;
     private final Restaurant restaurant;
+    private final EcoSystem system;
 
-    public ViewRestaurantsJPanel(JPanel container, Restaurant restaurant) {
+    public ViewRestaurantsJPanel(JPanel container, Restaurant restaurant ,EcoSystem system) {
         initComponents();
         this.container = container;
         this.restaurant = restaurant;
+        this.system = system;
         txtRestaurantID.setText(restaurant.getRestaurantNo());
         txtManagerName.setText(restaurant.getOperatorName());
         txtAddressStreet.setText(restaurant.getStreetAddress());
@@ -220,10 +223,20 @@ public class ViewRestaurantsJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        if (txtRestaurantName.getText().isEmpty() || txtAddressStreet.getText().isEmpty() || txtPhoneNo.getText().isEmpty() || txtManagerName.getText().isEmpty()) {
+        if (txtRestaurantName.getText().isEmpty() || txtManagerName.getText().isEmpty() || txtAddressStreet.getText().isEmpty() || txtPhoneNo.getText().isEmpty() || txtZipcode.getText().isEmpty() || txtEmail.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Fill All Fields!");
+        } else if (!system.checkValidNameFormat(txtRestaurantName.getText())) {
+            JOptionPane.showMessageDialog(null, "Enter valid Restaurant Name.");
+        } else if (!system.checkValidNameFormat(txtManagerName.getText())) {
+            JOptionPane.showMessageDialog(null, "Enter valid Manager Name");
+        } else if (!system.checkValidNameFormat(txtAddressStreet.getText())) {
+            JOptionPane.showMessageDialog(null, "Enter valid Adress");
+        } else if (!system.checkValidNameFormat(txtZipcode.getText())) {
+            JOptionPane.showMessageDialog(null, "Enter valid Adress");
+        } else if (!system.checkValidNameFormat(txtEmail.getText())) {
+            JOptionPane.showMessageDialog(null, "Enter valid email id");
         } else if (!checkPhoneNoValidation(txtPhoneNo.getText())) {
-            JOptionPane.showMessageDialog(null, "Please Enter Valid Phone No!");
+            JOptionPane.showMessageDialog(null, "Enter Valid Phone No");
         } else {
             restaurant.setRestaurantName(txtRestaurantName.getText());
             restaurant.setOperatorName(txtManagerName.getText());
@@ -233,9 +246,21 @@ public class ViewRestaurantsJPanel extends javax.swing.JPanel {
             restaurant.setZipcode(txtZipcode.getText());
             JOptionPane.showMessageDialog(null, "Changes Saved Sucessfully!");
             disableEditing();
+            emptyAllFields();
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 
+    public void emptyAllFields() {
+        txtRestaurantID.setText("");
+        txtRestaurantName.setText("");
+        txtManagerName.setText("");
+        txtAddressStreet.setText("");
+        txtZipcode.setText("");
+        txtPhoneNo.setText("");
+        txtEmail.setText("");
+        
+    }
+    
     public void disableEditing() {
         txtRestaurantID.setEditable(false);
         txtManagerName.setEditable(false);

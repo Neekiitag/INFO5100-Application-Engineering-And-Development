@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Charmi Dalal
+ * @author adity
  */
 public class UpdateCustomersJPanel extends javax.swing.JPanel {
 

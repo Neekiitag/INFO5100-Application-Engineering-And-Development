@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Charmi Dalal
+ * @author harold
  */
 public class RestaurantDirectory {
     private ArrayList<Restaurant> restaurantDirectory;

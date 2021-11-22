@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Charmi Dalal
+ * @author adity
  */
 public class AddMenuItemJPanel extends javax.swing.JPanel {
 

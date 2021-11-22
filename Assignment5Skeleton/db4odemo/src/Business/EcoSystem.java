@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author Charmi Dalal
+ * @author MyPC1
  */
 public class EcoSystem extends Organization {
 
@@ -101,11 +101,24 @@ public class EcoSystem extends Organization {
         }
         return false;
     }
-    public Boolean checkValidEmailFormat(String email)
+    
+    public Boolean checkValidNameFormat(String name)
     {
-        String regex = "^(.+)@(.+)$";
+        String regex = "^[a-zA-Z]+";
         Pattern pattern = Pattern.compile(regex);
 
+        Matcher matcher = pattern.matcher(name);
+        if (matcher.matches()) {
+            return true;
+        }
+        return false;
+    }
+    
+    public Boolean checkValidEmailFormat(String email)
+    {
+        String regex = "^[a-zA-Z0-9]+@[a-zA-Z]+\\.[a-zA-Z]+";
+        Pattern pattern = Pattern.compile(regex);
+        
         Matcher matcher = pattern.matcher(email);
         if (matcher.matches()) {
             return true;
